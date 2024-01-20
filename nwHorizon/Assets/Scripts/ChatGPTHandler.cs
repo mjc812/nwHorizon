@@ -50,10 +50,7 @@ public class ChatGPTHandler : MonoBehaviour
             string contentString = response.choices[0].message.content;
             Location location = JsonUtility.FromJson<Location>(contentString);
             OnRequestComplete?.Invoke(location);
-            // Debug.Log(location);
-            // Debug.Log(location.latitude);
-            // Debug.Log(location.longitude);
-            // Debug.Log(location.altitude);
+            Debug.Log("chatgpt complete");
         }
         else
         {

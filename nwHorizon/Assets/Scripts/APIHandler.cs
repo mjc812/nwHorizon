@@ -18,8 +18,6 @@ public class APIHandler : MonoBehaviour
     }
 
     private void OnRequestCompleteHandler(Location location) {
-        Debug.Log(location.latitude);
-        Debug.Log(location.longitude);
-        Debug.Log(location.altitude);
+        cesiumHandler.SetNewLocation(location.latitude, location.longitude, location.altitude);
     }
 }
