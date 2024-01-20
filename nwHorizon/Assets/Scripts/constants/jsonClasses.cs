@@ -33,3 +33,11 @@ public class Usage
     public int completion_tokens;
     public int total_tokens;
 }
+
+[System.Serializable]
+public class Location
+{
+    public float latitude;
+    public float longitude;
+    public float altitude;
+}
