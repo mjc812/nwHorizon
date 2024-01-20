@@ -12,14 +12,14 @@ public class Logger : MonoBehaviour
     }
 
     private void OnPromptInputOpenHandler() {
-        Debug.Log("input open");
+        //Debug.Log("input open");
     }
 
     private void OnPromptInputClosedHandler() {
-        Debug.Log("input closed");
+       // Debug.Log("input closed");
     }
     
     private void OnPromptInputSubmitHandler(string prompt) {
-        Debug.Log("input submit: " + prompt);
+        //Debug.Log("input submit: " + prompt);
     }
 }

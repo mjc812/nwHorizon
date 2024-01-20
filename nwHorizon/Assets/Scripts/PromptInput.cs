@@ -12,7 +12,7 @@ public class PromptInput : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Called");
+        Debug.Log("Called");    
         if (Input.GetKeyDown(KeyCode.T))
         {
             inputField.SetActive(!inputField.activeSelf);

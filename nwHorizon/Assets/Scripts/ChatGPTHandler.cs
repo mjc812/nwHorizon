@@ -2,18 +2,22 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
 using System.Text;
+using System;
 
-public class ChatGPT : MonoBehaviour
+public class ChatGPTHandler : MonoBehaviour
 {
+    public delegate void RequestComplete(Location location);
+    public static event RequestComplete OnRequestComplete;
+
     private string openaiApiKey = Keys.chatgpt_api;
 
     //TODO: remove
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            StartCoroutine(RequestLocation("give me a cool city in france"));
-        }
-    }
+    // void Update() {
+    //     if (Input.GetKeyDown(KeyCode.T))
+    //     {
+    //         StartCoroutine(RequestLocation("give me a cool city in france"));
+    //     }
+    // }
 
     public IEnumerator RequestLocation(string prompt)
     {
@@ -45,10 +49,11 @@ public class ChatGPT : MonoBehaviour
             ChatCompletionResponse response = JsonUtility.FromJson<ChatCompletionResponse>(responseJson);
             string contentString = response.choices[0].message.content;
             Location location = JsonUtility.FromJson<Location>(contentString);
-            Debug.Log(location);
-            Debug.Log(location.latitude);
-            Debug.Log(location.longitude);
-            Debug.Log(location.altitude);
+            OnRequestComplete?.Invoke(location);
+            // Debug.Log(location);
+            // Debug.Log(location.latitude);
+            // Debug.Log(location.longitude);
+            // Debug.Log(location.altitude);
         }
         else
         {

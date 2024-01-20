@@ -13,7 +13,6 @@ public class CanvasController : MonoBehaviour
     public GameObject inputField;
     public TMP_InputField inputFieldText;
 
-
     void Awake() {
         inputField.SetActive(false);
     }
