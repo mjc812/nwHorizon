@@ -3,8 +3,16 @@ using TMPro;
 
 public class CanvasController : MonoBehaviour
 {
+    public delegate void PromptInputOpen();
+    public static event PromptInputOpen OnPromptInputOpen;
+    public delegate void PromptInputClosed();
+    public static event PromptInputClosed OnPromptInputClosed;
+    public delegate void PromptInputSubmit(string prompt);
+    public static event PromptInputSubmit OnPromptInputSubmit;
+
     public GameObject inputField;
     public TMP_InputField inputFieldText;
+
 
     void Awake() {
         inputField.SetActive(false);
@@ -21,12 +29,18 @@ public class CanvasController : MonoBehaviour
                 inputFieldText.text = "";
                 inputFieldText.Select();
                 inputFieldText.ActivateInputField();
-                Debug.Log("Input field opened");
+                OnPromptInputOpen?.Invoke();
             }
             else
             {
-                Debug.Log("Input field closed");
+                OnPromptInputClosed?.Invoke();
             }
+        } else if (Input.GetKeyDown(KeyCode.Return)) {
+            if (inputField.activeSelf) {
+                inputField.SetActive(false);
+                string prompt = inputFieldText.text;
+                OnPromptInputSubmit?.Invoke(prompt);
+            }   
         }
     }   
 }
