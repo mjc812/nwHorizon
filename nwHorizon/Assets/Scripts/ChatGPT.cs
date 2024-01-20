@@ -41,7 +41,9 @@ public class ChatGPT : MonoBehaviour
         if (request.result == UnityWebRequest.Result.Success)
         {
             string responseJson = request.downloadHandler.text;
-            Debug.Log(responseJson);
+            ChatCompletionResponse response = JsonUtility.FromJson<ChatCompletionResponse>(responseJson);
+            string contentString = response.choices[0].message.content;
+            Debug.Log(contentString);
         }
         else
         {
