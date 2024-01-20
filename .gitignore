@@ -1,5 +1,10 @@
 # This .gitignore file should be placed at the root of your Unity project directory
 #
+
+# Ignore specific files
+Keys.cs
+Keys.cs.meta
+
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 [Ll]ibrary/
