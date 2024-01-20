@@ -6,7 +6,7 @@ public class CesiumHandler : MonoBehaviour
 {
     public CesiumGeoreference cesiumGeoreference;
 
-    //just for testing
+    //TODO: remove
     void Update() {
         if (Input.GetKeyDown(KeyCode.T))
         {
@@ -19,7 +19,6 @@ public class CesiumHandler : MonoBehaviour
         cesiumGeoreference.latitude = 48.8566f;
         cesiumGeoreference.longitude = 2.3522f;
         cesiumGeoreference.height = 200f;
-        // cameraMove.transform.position = new Vector3(0f, altitudeOffset, -1500f);
     }
 }
 
