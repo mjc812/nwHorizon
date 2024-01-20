@@ -2,7 +2,7 @@ using UnityEngine;
 using CesiumForUnity;
 using System;
 
-public class SetLocation : MonoBehaviour
+public class Config : MonoBehaviour
 {
     public Cesium3DTileset cesium3DTileset;
 
