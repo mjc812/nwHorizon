@@ -169,6 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5da14760f6fd4079a6535b1cff69703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1696129930}
+  rotationSpeed: 5
   locationText: {fileID: 1851694267}
   countryText: {fileID: 1851694269}
   cityText: {fileID: 642182968}
