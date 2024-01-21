@@ -793,6 +793,7 @@ MonoBehaviour:
   forwardForceMultiplier: 100
   torqueForce: 50
   maxPitchAngle: 80
+  angularDamping: 0.95
 --- !u!1 &1875102776
 GameObject:
   m_ObjectHideFlags: 0

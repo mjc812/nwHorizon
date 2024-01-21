@@ -5,6 +5,8 @@ public class FlightController : MonoBehaviour
     public float forwardForceMultiplier = 10.0f;
     public float torqueForce = 5.0f;
     public float maxPitchAngle = 80.0f;
+    public float angularDamping = 0.95f;
+
 
     private Rigidbody rb;
 
@@ -19,7 +21,12 @@ public class FlightController : MonoBehaviour
 
     void Update() {
         Vector3 rotation = transform.rotation.eulerAngles;
+        
+        rotation.x = (rotation.x > 180) ? rotation.x - 360 : rotation.x;
+        rotation.x = Mathf.Clamp(rotation.x, -60f, 60f);
+
         rotation.z = 0;
+
         transform.rotation = Quaternion.Euler(rotation);
     }
 
@@ -33,5 +40,7 @@ public class FlightController : MonoBehaviour
 
         Vector3 forwardForce = transform.forward * forwardForceMultiplier;
         rb.AddForce(forwardForce);
+
+        rb.angularVelocity *= angularDamping;
     }
 }
