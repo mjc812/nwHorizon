@@ -9,6 +9,8 @@ public class GameInputManager : MonoBehaviour
     public float defaultVolume = 75f;
     public float brightness;
     public float defaultBrightness = 75f;
+    public float fontSize;
+    public float defaultFontSize = 15f;
     public float yawSensitivity;
     public float defaultYawSensitivity = 15f;
     public float pitchSensitivity;
@@ -26,6 +28,7 @@ public class GameInputManager : MonoBehaviour
         pitchSensitivity = defaultPitchSensitivity;
         contrast = defaultContrast;
         disableMotionEffects = defaultDisableMotionEffects;
+        fontSize = defaultFontSize;
 
         if (Instance == null)
         {
