@@ -11,6 +11,7 @@ public class FlightController : MonoBehaviour
     public float torqueForce = 5.0f;
     public float maxPitchAngle = 80.0f;
     public float angularDamping = 0.95f;
+    private bool lockPlayer = false;
 
     private Rigidbody rb;
 
@@ -28,37 +29,42 @@ public class FlightController : MonoBehaviour
     }
 
     void Update() {
-        Vector3 rotation = transform.rotation.eulerAngles;
+        if (!lockPlayer) {
+            Vector3 rotation = transform.rotation.eulerAngles;
         
-        rotation.x = (rotation.x > 180) ? rotation.x - 360 : rotation.x;
-        rotation.x = Mathf.Clamp(rotation.x, -60f, 60f);
+            rotation.x = (rotation.x > 180) ? rotation.x - 360 : rotation.x;
+            rotation.x = Mathf.Clamp(rotation.x, -60f, 60f);
 
-        rotation.z = 0;
+            rotation.z = 0;
 
-        transform.rotation = Quaternion.Euler(rotation);
+            transform.rotation = Quaternion.Euler(rotation);
+        }
     }
 
     void FixedUpdate()
     {
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
+        if (!lockPlayer) {
+            float mouseX = Input.GetAxis("Mouse X");
+            float mouseY = Input.GetAxis("Mouse Y");
 
-        rb.AddTorque(transform.up * mouseX * torqueForce);
-        rb.AddTorque(transform.right * -mouseY * torqueForce);
+            rb.AddTorque(transform.up * mouseX * torqueForce);
+            rb.AddTorque(transform.right * -mouseY * torqueForce);
 
-        Vector3 forwardForce = transform.forward * currentforwardForceMultiplier;
-        rb.AddForce(forwardForce);
+            Vector3 forwardForce = transform.forward * currentforwardForceMultiplier;
+            rb.AddForce(forwardForce);
 
-        rb.angularVelocity *= angularDamping;
+            rb.angularVelocity *= angularDamping;
+        }
     }
 
     private void OnPromptInputOpenHandler() {
         currentforwardForceMultiplier = slowForwardForceMultiplier;
-        
+        lockPlayer = true;
     }
 
     private void OnPromptInputClosedHandler() {
         currentforwardForceMultiplier = normalForwardForceMultiplier;
+        lockPlayer = false;
     }
     
     // private void OnPromptInputSubmitHandler(string prompt) {
@@ -68,6 +74,7 @@ public class FlightController : MonoBehaviour
     private void OnTransitionFinishedHandler() {
         Debug.Log("transition finished called");
         currentforwardForceMultiplier = normalForwardForceMultiplier;
+        lockPlayer = false;
     }
 
     private IEnumerator ChangeValueOverTime(float targetValue, float duration)

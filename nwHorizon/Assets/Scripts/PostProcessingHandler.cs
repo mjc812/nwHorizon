@@ -35,7 +35,6 @@ public class PostProcessingHandler : MonoBehaviour
     {
         if (stall) { //TODO remove this. only for testing
             yield return new WaitForSeconds(2.0f);
-            OnTransitionFinished?.Invoke();
         }
 
         float t = 0f;
@@ -44,11 +43,11 @@ public class PostProcessingHandler : MonoBehaviour
         {
             t += Time.deltaTime;
             bloomLayer.intensity.value = Mathf.Lerp(startIntensity, targetIntensity, t / time);
-            //TODO better way to check this? different function?
-            // if (stall && bloomLayer.intensity.value < 2) {
-            //     OnTransitionFinished?.Invoke();
-            // }
             yield return null;
+        }
+
+        if (stall) { //TODO remove this. only for testing
+            OnTransitionFinished?.Invoke();
         }
     }
 
