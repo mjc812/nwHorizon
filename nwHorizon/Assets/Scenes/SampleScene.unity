@@ -6030,7 +6030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93d4a925ba364a48aaa26874ac754ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalForwardForceMultiplier: 70
+  normalForwardForceMultiplier: 100
   slowForwardForceMultiplier: 10
   fastForwardForceMultiplier: 500
   torqueForce: 10
@@ -6169,7 +6169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inverse: 1
   lerpTime: 10
-  yawSensitivity: 15
+  yawSensitivity: 12
   pitchSensitivity: 7
   slowFlyMultiplier: 0.2
   smoothing: 2
