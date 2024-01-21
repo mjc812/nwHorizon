@@ -11,14 +11,6 @@ public class ChatGPTHandler : MonoBehaviour
 
     private string openaiApiKey = Keys.chatgpt_api;
 
-    //TODO: remove
-    // void Update() {
-    //     if (Input.GetKeyDown(KeyCode.T))
-    //     {
-    //         StartCoroutine(RequestLocation("give me a cool city in france"));
-    //     }
-    // }
-
     public IEnumerator RequestLocation(string prompt)
     {
         string openaiEndpoint = "https://api.openai.com/v1/chat/completions";

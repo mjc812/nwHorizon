@@ -7,6 +7,7 @@ public class APIHandler : MonoBehaviour
 {
     public GameObject Player;
     public Transform playerTransform;
+    public PlayerHandler playerHandler;
     public ChatGPTHandler chatGPTHandler;
     public CesiumHandler cesiumHandler;
     public Cesium3DTileset cesium3DTileset;
@@ -34,11 +35,12 @@ public class APIHandler : MonoBehaviour
 
     private void OnRequestCompleteHandler(Location location) {
         logProgress = false;
+        playerHandler.ZeroPlayerRotation();
         cesiumHandler.SetNewLocation(location.latitude, location.longitude, location.altitude);
         SetPlayerLocation(location.altitude);
     }
 
     private void SetPlayerLocation(float altitude) {
-        playerTransform.position = new Vector3(0f, altitude + playerAltitudeOffset, 0f);
+        playerHandler.SetPlayerPosition(0f, altitude + playerAltitudeOffset, 0f);
     }
 }

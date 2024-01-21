@@ -7,7 +7,6 @@ public class FlightController : MonoBehaviour
     public float maxPitchAngle = 80.0f;
     public float angularDamping = 0.95f;
 
-
     private Rigidbody rb;
 
     void Start()
@@ -20,7 +19,7 @@ public class FlightController : MonoBehaviour
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.T)) {
+              if (Input.GetKeyDown(KeyCode.T)) {
             if (forwardForceMultiplier == 0f) {
                 forwardForceMultiplier = 100f;
             } else {

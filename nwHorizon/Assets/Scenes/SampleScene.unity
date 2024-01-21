@@ -583,6 +583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1696129929}
   playerTransform: {fileID: 1696129930}
+  playerHandler: {fileID: 1696129934}
   chatGPTHandler: {fileID: 996719719}
   cesiumHandler: {fileID: 996719718}
   cesium3DTileset: {fileID: 2028387639}
@@ -719,6 +720,7 @@ GameObject:
   - component: {fileID: 1696129931}
   - component: {fileID: 1696129933}
   - component: {fileID: 1696129932}
+  - component: {fileID: 1696129934}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -799,6 +801,19 @@ MonoBehaviour:
   torqueForce: 10
   maxPitchAngle: 80
   angularDamping: 0.95
+--- !u!114 &1696129934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696129929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9621a102d8f47929f410878ffec8d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
 --- !u!1 &1760199111
 GameObject:
   m_ObjectHideFlags: 0
