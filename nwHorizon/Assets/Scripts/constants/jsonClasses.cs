@@ -40,4 +40,7 @@ public class Location
     public float latitude;
     public float longitude;
     public float altitude;
+    public string city;
+    public string country;
+    public string fact;
 }

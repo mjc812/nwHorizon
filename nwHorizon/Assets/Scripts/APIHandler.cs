@@ -42,7 +42,7 @@ public class APIHandler : MonoBehaviour
         cesiumHandler.SetNewLocation(location.latitude, location.longitude, location.altitude);
         SetPlayerLocation(location.altitude);
         locationTextHandler.SetLocationTextAltitude(location.altitude + locationTextAltitudeOffset);
-        locationTextHandler.SetLocationText("tokyo", "japan");
+        locationTextHandler.SetLocationText(location.city, location.country);
     }
 
     private void SetPlayerLocation(float altitude) {
