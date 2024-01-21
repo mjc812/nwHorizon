@@ -29,6 +29,8 @@ public class SettingsController : MonoBehaviour
     public Slider pitchSensitivitySlider;
     public Toggle disableMotionEffects;
 
+    public Button resetPlane;
+
 
     void Start()
     {
@@ -41,6 +43,7 @@ public class SettingsController : MonoBehaviour
         UpdateSliderText(yawSensitivityText, GameInputManager.Instance.yawSensitivity);
         UpdateSliderText(pitchSensitivityText, GameInputManager.Instance.pitchSensitivity);
         disableMotionEffects.isOn = GameInputManager.Instance.disableMotionEffects;
+        resetPlane.onClick.AddListener(resetPlaneHandler);
 
         volumeSlider.value = GameInputManager.Instance.volume;
         sensitivitySlider.value = GameInputManager.Instance.sensitivity;
@@ -86,6 +89,10 @@ public class SettingsController : MonoBehaviour
     {
         GameInputManager.Instance.disableMotionEffects = isOn;
 
+    }
+
+    void resetPlaneHandler() {
+        Debug.Log("reset player");
     }
 }
 

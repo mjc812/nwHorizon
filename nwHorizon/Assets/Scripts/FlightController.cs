@@ -71,8 +71,8 @@ public class FlightController : MonoBehaviour
             Vector3 forwardForce = transform.forward * currentforwardForceMultiplier;
             rb.AddForce(forwardForce);
 
-            rb.AddTorque(transform.up * mouseX * GameInputManager.Instance.sensitivity);
-            rb.AddTorque(transform.right * -mouseY * GameInputManager.Instance.sensitivity);
+            rb.AddTorque(transform.up * mouseX * torqueForce); //GameInputManager.Instance.sensitivity
+            rb.AddTorque(transform.right * -mouseY * torqueForce); //GameInputManager.Instance.sensitivity
 
             rb.angularVelocity *= angularDamping;
             rb.velocity *= angularDamping;
