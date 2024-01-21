@@ -202,7 +202,7 @@ Transform:
   m_GameObject: {fileID: 620947010}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 54.3}
+  m_LocalPosition: {x: 0, y: 0, z: 65.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -257,7 +257,7 @@ ParticleSystemRenderer:
   m_MaxParticleSize: 0.5
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
-  m_LengthScale: 8
+  m_LengthScale: 4
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
@@ -6137,6 +6137,7 @@ MonoBehaviour:
   lerpTime: 10
   yawSensitivity: 15
   pitchSensitivity: 7
+  slowFlyMultiplier: 0.2
   smoothing: 2
   momentum: 0.95
 --- !u!1 &1851694267
@@ -6359,6 +6360,7 @@ MonoBehaviour:
   lerpTime: 10
   yawSensitivity: 3
   pitchSensitivity: 2
+  slowFlyMultiplier: 0.2
   smoothing: 2
   momentum: 0.95
 --- !u!1 &1909521520

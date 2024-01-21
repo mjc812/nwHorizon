@@ -8,6 +8,9 @@ public class MouseRotationController : MonoBehaviour
     public float lerpTime = 10.0f;
     public float yawSensitivity = 5.0f;
     public float pitchSensitivity = 5.0f;
+    private float currentYawSensitivity = 5.0f;
+    private float currentPitchSensitivity = 5.0f;
+    public float slowFlyMultiplier = 0.75f;
     public float smoothing = 2.0f;
     public float momentum = 0.95f;
 
@@ -21,6 +24,9 @@ public class MouseRotationController : MonoBehaviour
         CanvasController.OnPromptInputOpen += OnPromptInputOpenHandler;
         CanvasController.OnPromptInputClosed += OnPromptInputClosedHandler;
         PostProcessingHandler.OnTransitionFinished += OnTransitionFinishedHandler;
+        
+        FlightController.OnSlowFly += OnSlowFlyHandler;
+        FlightController.OnNormalFly += OnNormalFlyHandler;
     }
 
     void Update()
@@ -70,4 +76,13 @@ public class MouseRotationController : MonoBehaviour
         lockPlayer = false;
     }
 
+    private void OnSlowFlyHandler() {
+        // currentYawSensitivity = yawSensitivity * slowFlyMultiplier;
+        // currentPitchSensitivity = pitchSensitivity * slowFlyMultiplier;
+    }
+
+    private void OnNormalFlyHandler() {
+        // currentYawSensitivity = yawSensitivity;
+        // currentPitchSensitivity = pitchSensitivity;
+    }
 }
