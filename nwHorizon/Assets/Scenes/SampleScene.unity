@@ -5736,9 +5736,9 @@ MonoBehaviour:
   cesiumHandler: {fileID: 996719718}
   cesium3DTileset: {fileID: 2028387639}
   locationTextHandler: {fileID: 27456526}
-  playerAltitudeOffset: 150
-  playerLatitudeOffset: -600
-  locationTextAltitudeOffset: 250
+  playerAltitudeOffset: 200
+  playerLatitudeOffset: -800
+  locationTextAltitudeOffset: 300
 --- !u!1 &1400260924
 GameObject:
   m_ObjectHideFlags: 0
@@ -6733,7 +6733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 844ac86b07dcfa3468f56da55d787510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _showCreditsOnScreen: 1
+  _showCreditsOnScreen: 0
   _tilesetSource: 0
   _url: 
   _ionAssetID: 2275207

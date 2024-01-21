@@ -14,9 +14,9 @@ public class APIHandler : MonoBehaviour
     public Cesium3DTileset cesium3DTileset;
     public LocationTextHandler locationTextHandler;
 
-    public float playerAltitudeOffset = 200f;
-    public float playerLatitudeOffset = -600f;
-    public float locationTextAltitudeOffset = 300f;
+    public float playerAltitudeOffset = 150f;
+    public float playerLatitudeOffset = -800f;
+    public float locationTextAltitudeOffset = 250f;
 
     private bool logProgress = false;
     private bool stall = false;
