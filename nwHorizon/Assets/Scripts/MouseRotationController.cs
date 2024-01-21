@@ -13,11 +13,25 @@ public class MouseRotationController : MonoBehaviour
 
     private float smoothMouseX;
     private float smoothMouseY;
+    private bool lockPlayer = false;
+
+
+    void Start()
+    {
+        CanvasController.OnPromptInputOpen += OnPromptInputOpenHandler;
+        CanvasController.OnPromptInputClosed += OnPromptInputClosedHandler;
+        PostProcessingHandler.OnTransitionFinished += OnTransitionFinishedHandler;
+    }
 
     void Update()
     {
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
+        
+        if (lockPlayer) {
+            mouseX = 0f;
+            mouseY = 0f;
+        }
         
         smoothMouseX = Mathf.Lerp(smoothMouseX, mouseX, Time.deltaTime * smoothing);
         smoothMouseY = Mathf.Lerp(smoothMouseY, mouseY, Time.deltaTime * smoothing);
@@ -39,6 +53,18 @@ public class MouseRotationController : MonoBehaviour
         Quaternion yRotation = Quaternion.AngleAxis(mouseX, inverse ? Vector3.forward : Vector3.up);
         Quaternion targetRotation = xRotation * yRotation;
         transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, lerpTime * Time.deltaTime);
-
     }
+
+    private void OnPromptInputOpenHandler() {
+        lockPlayer = true;
+    }
+
+    private void OnPromptInputClosedHandler() {
+        lockPlayer = false;
+    }
+    
+    private void OnTransitionFinishedHandler() {
+        lockPlayer = false;
+    }
+
 }
