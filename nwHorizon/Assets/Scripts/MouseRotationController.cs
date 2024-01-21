@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaneController : MonoBehaviour
+public class MouseRotationController : MonoBehaviour
 {
+    public bool inverse = false;
     public float lerpTime = 10.0f;
     public float yawSensitivity = 5.0f;
     public float pitchSensitivity = 5.0f;
@@ -29,8 +30,13 @@ public class PlaneController : MonoBehaviour
         mouseX *= 100.0f * yawSensitivity;
         mouseY *= 100.0f * pitchSensitivity;
 
-        Quaternion xRotation = Quaternion.AngleAxis(-1 * mouseY, Vector3.right);
-        Quaternion yRotation = Quaternion.AngleAxis(-1 * mouseX, Vector3.forward);
+        if (inverse) {
+            mouseX *= -1;
+            mouseY *= -1;
+        }
+
+        Quaternion xRotation = Quaternion.AngleAxis(mouseY, Vector3.right);
+        Quaternion yRotation = Quaternion.AngleAxis(mouseX, inverse ? Vector3.forward : Vector3.up);
         Quaternion targetRotation = xRotation * yRotation;
         transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, lerpTime * Time.deltaTime);
 
