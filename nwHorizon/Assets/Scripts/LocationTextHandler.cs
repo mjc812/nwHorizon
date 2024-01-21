@@ -6,10 +6,12 @@ using TMPro;
 public class LocationTextHandler : MonoBehaviour
 {
     public GameObject locationText;
-    public TMP_Text textMeshPro;
+    public TMP_Text countryText;
+    public TMP_Text cityText;
 
     public void SetLocationText(string city, string country) {
-        textMeshPro.text = city + ", " + country; 
+        countryText.text = country;
+        cityText.text = city;
     }
 
     public void SetLocationTextAltitude(float altitude) {
