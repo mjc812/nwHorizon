@@ -12,6 +12,7 @@ public class CanvasController : MonoBehaviour
 
     public GameObject inputField;
     public TMP_InputField inputFieldText;
+    public TMP_Text factText;
 
     void Awake() {
         inputField.SetActive(false);
@@ -41,5 +42,9 @@ public class CanvasController : MonoBehaviour
                 OnPromptInputSubmit?.Invoke(prompt);
             }   
         }
-    }   
+    }
+
+    public void SetFactText(string fact) {
+        factText.text = fact;
+    }
 }

@@ -13,6 +13,7 @@ public class APIHandler : MonoBehaviour
     public CesiumHandler cesiumHandler;
     public Cesium3DTileset cesium3DTileset;
     public LocationTextHandler locationTextHandler;
+    public CanvasController canvasController;
 
     public float playerAltitudeOffset = 150f;
     public float playerLatitudeOffset = -800f;
@@ -46,6 +47,7 @@ public class APIHandler : MonoBehaviour
         SetPlayerLocation(location.altitude);
         locationTextHandler.SetLocationTextAltitude(location.altitude + locationTextAltitudeOffset);
         locationTextHandler.SetLocationText(location.city, location.country);
+        canvasController.SetFactText(location.fact);
         postProcessingHandler.DecreaseBloom();
     }
 
