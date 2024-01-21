@@ -2,11 +2,10 @@ using UnityEngine;
 
 public class FlightController : MonoBehaviour
 {
-    public float forwardForceMultiplier = 10.0f;
+    public float forwardForceMultiplier = 100.0f;
     public float torqueForce = 5.0f;
     public float maxPitchAngle = 80.0f;
     public float angularDamping = 0.95f;
-
 
     private Rigidbody rb;
 
@@ -20,6 +19,13 @@ public class FlightController : MonoBehaviour
     }
 
     void Update() {
+              if (Input.GetKeyDown(KeyCode.T)) {
+            if (forwardForceMultiplier == 0f) {
+                forwardForceMultiplier = 100f;
+            } else {
+                forwardForceMultiplier = 0f;
+            }
+        }
         Vector3 rotation = transform.rotation.eulerAngles;
         
         rotation.x = (rotation.x > 180) ? rotation.x - 360 : rotation.x;
