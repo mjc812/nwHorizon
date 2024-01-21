@@ -4,6 +4,9 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class PostProcessingHandler : MonoBehaviour
 {
+    public delegate void TransitionFinished();
+    public static event TransitionFinished OnTransitionFinished;
+
     public PostProcessVolume postProcessVolume;
     private Bloom bloomLayer;
     private bool intensify = false;
@@ -41,6 +44,10 @@ public class PostProcessingHandler : MonoBehaviour
             t += Time.deltaTime;
             bloomLayer.intensity.value = Mathf.Lerp(startIntensity, targetIntensity, t / time);
             yield return null;
+        }
+
+        if (stall) { //TODO remove this. only for testing
+            OnTransitionFinished?.Invoke();
         }
     }
 
