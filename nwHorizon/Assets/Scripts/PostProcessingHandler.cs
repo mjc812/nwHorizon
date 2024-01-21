@@ -29,19 +29,19 @@ public class PostProcessingHandler : MonoBehaviour
     public void IncreaseBloom()
     {
         intensify = true;
-        StartCoroutine(ChangeBloomIntensityOverTime(bloomLayer.intensity, 40f, 3.0f, false));
+        StartCoroutine(ChangeBloomIntensityOverTime(bloomLayer.intensity, 10f, 4.0f, false));
     }
 
     public void DecreaseBloom()
     {
-        StartCoroutine(ChangeBloomIntensityOverTime(bloomLayer.intensity, 0f, 3.0f, true));
+        StartCoroutine(ChangeBloomIntensityOverTime(bloomLayer.intensity, 0f, 4.0f, true));
     }
 
     private System.Collections.IEnumerator ChangeBloomIntensityOverTime(float startIntensity, float targetIntensity, float time, bool stall)
     {
-        if (stall) { //TODO remove this. only for testing
-            yield return new WaitForSeconds(2.0f);
-        }
+        // if (stall) { //TODO remove this. only for testing
+        //     yield return new WaitForSeconds(0.0f);
+        // }
 
         float t = 0f;
 
