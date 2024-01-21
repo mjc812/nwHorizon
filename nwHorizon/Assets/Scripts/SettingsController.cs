@@ -4,29 +4,34 @@ using UnityEngine.UI;
 
 public class SettingsController : MonoBehaviour
 {
-    public float volume = 75.0f;
+    //public float volume = 75.0f;
     public TMP_Text volumeText;
     public Slider volumeSlider;
 
-    public float brightness = 75.0f;
+    //public float brightness = 75.0f;
     public TMP_Text brightnessText;
     public Slider brightnessSlider;
 
-    public float yawSensitivity = 15.0f;
+   // public float yawSensitivity = 15.0f;
     public TMP_Text yawSensitivityText;
     public Slider yawSensitivitySlider;
 
-    public float pitchSensitivity = 8.0f;
+   // public float pitchSensitivity = 8.0f;
     public TMP_Text pitchSensitivityText;
     public Slider pitchSensitivitySlider;
 
     void Start()
     {
         // Initialize the slider values and text
-        UpdateSliderText(volumeText, volumeSlider.value);
-        UpdateSliderText(brightnessText, brightnessSlider.value);
-        UpdateSliderText(yawSensitivityText, yawSensitivitySlider.value);
-        UpdateSliderText(pitchSensitivityText, pitchSensitivitySlider.value);
+        UpdateSliderText(volumeText, GameInputManager.Instance.volume);
+        UpdateSliderText(brightnessText, GameInputManager.Instance.brightness);
+        UpdateSliderText(yawSensitivityText, GameInputManager.Instance.yawSensitivity);
+        UpdateSliderText(pitchSensitivityText, GameInputManager.Instance.pitchSensitivity);
+
+        volumeSlider.value = GameInputManager.Instance.volume;
+        brightnessSlider.value = GameInputManager.Instance.brightness;
+        yawSensitivitySlider.value = GameInputManager.Instance.yawSensitivity;
+        pitchSensitivitySlider.value = GameInputManager.Instance.pitchSensitivity;
 
         // Add listeners to respond to slider value changes
         volumeSlider.onValueChanged.AddListener(delegate { UpdateSliderText(volumeText, volumeSlider.value); });

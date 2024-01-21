@@ -7002,9 +7002,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 0
+  defaultVolume: 75
   brightness: 0
+  defaultBrightness: 75
   yawSensitivity: 0
+  defaultYawSensitivity: 15
   pitchSensitivity: 0
+  defaultPitchSensitivity: 8
 --- !u!1 &1017128255
 GameObject:
   m_ObjectHideFlags: 0
@@ -9373,16 +9377,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919cddb6fe8974803919b6e5a75cf664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: 75
   volumeText: {fileID: 2022317041}
   volumeSlider: {fileID: 1228594730}
-  brightness: 75
   brightnessText: {fileID: 444248185}
   brightnessSlider: {fileID: 1069498381}
-  yawSensitivity: 15
   yawSensitivityText: {fileID: 198701218}
   yawSensitivitySlider: {fileID: 243016259}
-  pitchSensitivity: 8
   pitchSensitivityText: {fileID: 1257354267}
   pitchSensitivitySlider: {fileID: 634981049}
 --- !u!1 &2022317039
