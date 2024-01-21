@@ -11,8 +11,11 @@ public class APIHandler : MonoBehaviour
     public ChatGPTHandler chatGPTHandler;
     public CesiumHandler cesiumHandler;
     public Cesium3DTileset cesium3DTileset;
+    public LocationTextHandler locationTextHandler;
 
     public float playerAltitudeOffset = 200f;
+    public float playerLatitudeOffset = -600f;
+    public float locationTextAltitudeOffset = 300f;
 
     private bool logProgress = false;
 
@@ -38,9 +41,11 @@ public class APIHandler : MonoBehaviour
         playerHandler.ZeroPlayerRotation();
         cesiumHandler.SetNewLocation(location.latitude, location.longitude, location.altitude);
         SetPlayerLocation(location.altitude);
+        locationTextHandler.SetLocationTextAltitude(location.altitude + locationTextAltitudeOffset);
+        locationTextHandler.SetLocationText("tokyo", "japan");
     }
 
     private void SetPlayerLocation(float altitude) {
-        playerHandler.SetPlayerPosition(0f, altitude + playerAltitudeOffset, 0f);
+        playerHandler.SetPlayerPosition(0f, altitude + playerAltitudeOffset, playerLatitudeOffset);
     }
 }

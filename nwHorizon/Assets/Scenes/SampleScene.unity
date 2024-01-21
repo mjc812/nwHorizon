@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 27456525}
+  - component: {fileID: 27456526}
   m_Layer: 0
   m_Name: Location Text
   m_TagString: Untagged
@@ -155,6 +156,20 @@ Transform:
   - {fileID: 1851694268}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &27456526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27456524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5da14760f6fd4079a6535b1cff69703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locationText: {fileID: 1851694267}
+  textMeshPro: {fileID: 1851694269}
 --- !u!1 &628380067
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,7 +634,10 @@ MonoBehaviour:
   chatGPTHandler: {fileID: 996719719}
   cesiumHandler: {fileID: 996719718}
   cesium3DTileset: {fileID: 2028387639}
+  locationTextHandler: {fileID: 27456526}
   playerAltitudeOffset: 200
+  playerLatitudeOffset: -600
+  locationTextAltitudeOffset: 300
 --- !u!1 &1400260924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,8 +1054,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4287818237
+  m_fontColor: {r: 0.99215686, g: 0.9137255, b: 0.57254905, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1060,7 +1078,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 32
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
