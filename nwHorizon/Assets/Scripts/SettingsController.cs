@@ -21,6 +21,8 @@ public class SettingsController : MonoBehaviour
    // public float yawSensitivity = 15.0f;
     public TMP_Text yawSensitivityText;
     public Slider yawSensitivitySlider;
+    public TMP_Text sensitivityText;
+    public Slider sensitivitySlider;
 
    // public float pitchSensitivity = 8.0f;
     public TMP_Text pitchSensitivityText;
@@ -35,11 +37,13 @@ public class SettingsController : MonoBehaviour
         UpdateSliderText(brightnessText, GameInputManager.Instance.brightness);
         UpdateSliderText(contrastText, GameInputManager.Instance.contrast);
         UpdateSliderText(fontSizeText, GameInputManager.Instance.fontSize);
+        UpdateSliderText(sensitivityText, GameInputManager.Instance.sensitivity);
         UpdateSliderText(yawSensitivityText, GameInputManager.Instance.yawSensitivity);
         UpdateSliderText(pitchSensitivityText, GameInputManager.Instance.pitchSensitivity);
         disableMotionEffects.isOn = GameInputManager.Instance.disableMotionEffects;
 
         volumeSlider.value = GameInputManager.Instance.volume;
+        sensitivitySlider.value = GameInputManager.Instance.sensitivity;
         contrastSlider.value = GameInputManager.Instance.contrast;
         fontSizeSlider.value = GameInputManager.Instance.fontSize;
         brightnessSlider.value = GameInputManager.Instance.brightness;
@@ -50,6 +54,7 @@ public class SettingsController : MonoBehaviour
         volumeSlider.onValueChanged.AddListener(delegate { UpdateSliderText(volumeText, volumeSlider.value); });
         brightnessSlider.onValueChanged.AddListener(delegate { UpdateSliderText(brightnessText, brightnessSlider.value); });
         contrastSlider.onValueChanged.AddListener(delegate { UpdateSliderText(contrastText, contrastSlider.value); });
+        sensitivitySlider.onValueChanged.AddListener(delegate { UpdateSliderText(sensitivityText, sensitivitySlider.value); });
         fontSizeSlider.onValueChanged.AddListener(delegate { UpdateSliderText(fontSizeText, fontSizeSlider.value); });
         yawSensitivitySlider.onValueChanged.AddListener(delegate { UpdateSliderText(yawSensitivityText, yawSensitivitySlider.value); });
         pitchSensitivitySlider.onValueChanged.AddListener(delegate { UpdateSliderText(pitchSensitivityText, pitchSensitivitySlider.value); });
@@ -61,6 +66,7 @@ public class SettingsController : MonoBehaviour
         GameInputManager.Instance.brightness = brightnessSlider.value;
         GameInputManager.Instance.contrast = contrastSlider.value;
         GameInputManager.Instance.fontSize = fontSizeSlider.value;
+        GameInputManager.Instance.sensitivity = sensitivitySlider.value;
         GameInputManager.Instance.yawSensitivity = yawSensitivitySlider.value;
         GameInputManager.Instance.pitchSensitivity = pitchSensitivitySlider.value;
         GameInputManager.Instance.disableMotionEffects = disableMotionEffects.isOn;
