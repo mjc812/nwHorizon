@@ -1148,7 +1148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93d4a925ba364a48aaa26874ac754ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardForceMultiplier: 100
+  normalForwardForceMultiplier: 70
+  slowForwardForceMultiplier: 10
+  fastForwardForceMultiplier: 200
   torqueForce: 10
   maxPitchAngle: 80
   angularDamping: 0.95
