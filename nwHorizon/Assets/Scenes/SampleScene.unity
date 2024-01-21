@@ -807,7 +807,7 @@ GameObject:
   - component: {fileID: 1760199116}
   - component: {fileID: 1760199115}
   - component: {fileID: 1760199114}
-  - component: {fileID: 1760199113}
+  - component: {fileID: 1760199117}
   m_Layer: 0
   m_Name: Plane PlaceHolder
   m_TagString: Untagged
@@ -830,23 +830,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1696129930}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1760199113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760199111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 207d97f317471439ea44504b17839457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpTime: 10
-  yawSensitivity: 10
-  pitchSensitivity: 6
-  smoothing: 2
-  momentum: 0.95
 --- !u!65 &1760199114
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -918,6 +901,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760199111}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1760199117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760199111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8f74cc1a95249e6ba1fd3c978a0734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inverse: 1
+  lerpTime: 10
+  yawSensitivity: 15
+  pitchSensitivity: 10
+  smoothing: 2
+  momentum: 0.95
 --- !u!1 &1875102776
 GameObject:
   m_ObjectHideFlags: 0
