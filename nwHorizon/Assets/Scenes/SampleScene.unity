@@ -6133,10 +6133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8f74cc1a95249e6ba1fd3c978a0734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inverse: 1
+  inverse: 0
   lerpTime: 10
   yawSensitivity: 15
-  pitchSensitivity: 10
+  pitchSensitivity: 7
   smoothing: 2
   momentum: 0.95
 --- !u!1 &1851694267
@@ -6358,7 +6358,7 @@ MonoBehaviour:
   inverse: 0
   lerpTime: 10
   yawSensitivity: 3
-  pitchSensitivity: 3
+  pitchSensitivity: 2
   smoothing: 2
   momentum: 0.95
 --- !u!1 &1909521520
