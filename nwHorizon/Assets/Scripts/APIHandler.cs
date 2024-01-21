@@ -8,6 +8,7 @@ public class APIHandler : MonoBehaviour
     public GameObject Player;
     public Transform playerTransform;
     public PlayerHandler playerHandler;
+    public PostProcessingHandler postProcessingHandler;
     public ChatGPTHandler chatGPTHandler;
     public CesiumHandler cesiumHandler;
     public Cesium3DTileset cesium3DTileset;
@@ -18,6 +19,7 @@ public class APIHandler : MonoBehaviour
     public float locationTextAltitudeOffset = 300f;
 
     private bool logProgress = false;
+    private bool stall = false;
 
     void Start()
     {
@@ -27,12 +29,13 @@ public class APIHandler : MonoBehaviour
 
     void Update() {
         if (logProgress) {
-            Debug.Log(cesium3DTileset.ComputeLoadProgress());
+            //Debug.Log(cesium3DTileset.ComputeLoadProgress());
         }
     }
 
     private void OnPromptInputSubmitHandler(string prompt) {
         logProgress = true;
+        postProcessingHandler.IncreaseBloom();
         StartCoroutine(chatGPTHandler.RequestLocation(prompt));
     }
 
@@ -43,9 +46,16 @@ public class APIHandler : MonoBehaviour
         SetPlayerLocation(location.altitude);
         locationTextHandler.SetLocationTextAltitude(location.altitude + locationTextAltitudeOffset);
         locationTextHandler.SetLocationText(location.city, location.country);
+        postProcessingHandler.DecreaseBloom();
     }
 
     private void SetPlayerLocation(float altitude) {
         playerHandler.SetPlayerPosition(0f, altitude + playerAltitudeOffset, playerLatitudeOffset);
     }
+
+    private IEnumerator StallForSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+    }
+
 }

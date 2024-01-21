@@ -5,49 +5,43 @@ using UnityEngine.Rendering.PostProcessing;
 public class PostProcessingHandler : MonoBehaviour
 {
     public PostProcessVolume postProcessVolume;
-    private Bloom bloomEffect;
-
-    public float changeDuration = 3.0f;
+    private Bloom bloomLayer;
+    private bool intensify = false;
 
     private void Start()
     {
-        if (postProcessVolume == null)
+        if (!postProcessVolume.profile.TryGetSettings(out bloomLayer))
         {
-            Debug.LogError("Post-Processing Volume not assigned!");
+            Debug.LogError("Bloom layer not found!");
             return;
         }
-
-        postProcessVolume.profile.TryGetSettings(out bloomEffect);
     }
 
-    private void Update()
+    public void IncreaseBloom()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            StartCoroutine(ChangeBloomAsync(5.0f));
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            StartCoroutine(ChangeBloomAsync(0.0f));
-        }
+        intensify = true;
+        StartCoroutine(ChangeBloomIntensityOverTime(bloomLayer.intensity, 40f, 3.0f, false));
     }
 
-    private IEnumerator ChangeBloomAsync(float targetIntensity)
+    public void DecreaseBloom()
     {
-        if (bloomEffect != null)
+        StartCoroutine(ChangeBloomIntensityOverTime(bloomLayer.intensity, 0f, 3.0f, true));
+    }
+
+    private System.Collections.IEnumerator ChangeBloomIntensityOverTime(float startIntensity, float targetIntensity, float time, bool stall)
+    {
+        if (stall) { //TODO remove this. only for testing
+            yield return new WaitForSeconds(2.0f);
+        }
+
+        float t = 0f;
+
+        while (t < time)
         {
-            float elapsedTime = 0f;
-            float startIntensity = bloomEffect.intensity.value;
-
-            while (elapsedTime < changeDuration)
-            {
-                bloomEffect.intensity.value = Mathf.Lerp(startIntensity, targetIntensity, elapsedTime / changeDuration);
-                elapsedTime += Time.deltaTime;
-                yield return null;
-            }
-
-            bloomEffect.intensity.value = targetIntensity;
+            t += Time.deltaTime;
+            bloomLayer.intensity.value = Mathf.Lerp(startIntensity, targetIntensity, t / time);
+            yield return null;
         }
     }
+
 }
