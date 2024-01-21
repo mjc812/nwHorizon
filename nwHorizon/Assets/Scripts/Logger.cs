@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class Logger : MonoBehaviour
 {
+    public SettingsController settingsController;
     void Start()
     {
         CanvasController.OnPromptInputOpen += OnPromptInputOpenHandler;
         CanvasController.OnPromptInputClosed += OnPromptInputClosedHandler;
         CanvasController.OnPromptInputSubmit += OnPromptInputSubmitHandler;
+    }
+
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.T)) {
+            Debug.Log(settingsController.volume);
+        }
     }
 
     private void OnPromptInputOpenHandler() {
