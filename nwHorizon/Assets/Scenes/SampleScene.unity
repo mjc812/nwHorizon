@@ -792,7 +792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forwardForceMultiplier: 100
-  torqueForce: 50
+  torqueForce: 10
   maxPitchAngle: 80
   angularDamping: 0.95
 --- !u!1 &1760199111
@@ -843,6 +843,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lerpTime: 10
+  yawSensitivity: 10
+  pitchSensitivity: 6
 --- !u!65 &1760199114
 BoxCollider:
   m_ObjectHideFlags: 0
