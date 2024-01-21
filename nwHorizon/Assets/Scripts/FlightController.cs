@@ -1,0 +1,35 @@
+using UnityEngine;
+
+public class FlightController : MonoBehaviour
+{
+    public float forwardForceMultiplier = 10.0f;
+    public float torqueForce = 5.0f;
+    public float maxPitchAngle = 80.0f;
+
+    private Rigidbody rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        if (rb == null)
+        {
+            Debug.LogError("Rigidbody component not found. Attach a Rigidbody to the GameObject.");
+        }
+    }
+
+    void Update() {
+        
+    }
+
+    void FixedUpdate()
+    {
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
+
+        rb.AddTorque(transform.up * mouseX * torqueForce);
+        rb.AddTorque(transform.right * -mouseY * torqueForce);
+
+        Vector3 forwardForce = transform.forward * forwardForceMultiplier;
+        rb.AddForce(forwardForce);
+    }
+}

@@ -8,7 +8,7 @@ public class Config : MonoBehaviour
 
     private void Awake() {
         string google_cloud_api = Keys.google_cloud_api;
-        cesium3DTileset.url = "https://tile.googleapis.com/v1/3dtiles/root.json?key=" + google_cloud_api;
+        //cesium3DTileset.url = "https://tile.googleapis.com/v1/3dtiles/root.json?key=" + google_cloud_api;
     }
 }
 
