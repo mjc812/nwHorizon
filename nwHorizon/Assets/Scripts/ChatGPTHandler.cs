@@ -14,7 +14,7 @@ public class ChatGPTHandler : MonoBehaviour
     public IEnumerator RequestLocation(string prompt)
     {
         string openaiEndpoint = "https://api.openai.com/v1/chat/completions";
-        string systemContent = "You are a bot that finds a location that best matches the user's description, and simply returns a JSON with a number reprsenting the latitude, a number representing longitude in Decimal Degrees of the location, a number representing the altitude of the city of the location in meters, a string representing the city of the location, and a string representing the country of the location, and a string with between 100 to 200 characters representing a fact about the location. Your response must only be a string representing a JSON object with the key values pairs that I have specified.";
+        string systemContent = "You are a bot that finds a location that best matches the user's description, and simply returns a JSON with a number reprsenting the latitude, a number representing longitude in Decimal Degrees of the location, a number representing the altitude of the city, a string representing the city of the location, and a string representing the country of the location, and a string with between 100 to 200 characters representing a fact about the location. Your response must only be a string representing a JSON object with the key values pairs that I have specified.";
 
         string modelName = "gpt-3.5-turbo";
         string requestData = $"{{" +
@@ -43,6 +43,9 @@ public class ChatGPTHandler : MonoBehaviour
             string contentString = response.choices[0].message.content;
             Debug.Log(contentString);
             Location location = JsonUtility.FromJson<Location>(contentString);
+            //if (location.altitude > 1000f) {
+                //location.altitude = 3000f;
+            //}
             OnRequestComplete?.Invoke(location);
         }
         else

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouseRotationController : MonoBehaviour
+public class EmergencyCopy : MonoBehaviour
 {
     public bool inverse;
     public float lerpTime = 10.0f;
@@ -54,16 +54,15 @@ public class MouseRotationController : MonoBehaviour
         mouseX *= 100.0f * yawSensitivity;
         mouseY *= 100.0f * pitchSensitivity;
 
-        if (inverse) {
-            mouseX *= -1;
-            mouseY *= -1;
-        }
+        
+        mouseX *= -1;
+        // mouseY *= -1;
 
         mouseX = Mathf.Clamp(mouseX, -50f, 50f);
         mouseY = Mathf.Clamp(mouseY, -20f, 20f);
 
-        Quaternion xRotation = Quaternion.AngleAxis(mouseY, Vector3.right);
-        Quaternion yRotation = Quaternion.AngleAxis(mouseX, inverse ? Vector3.forward : Vector3.up);
+        Quaternion xRotation = Quaternion.AngleAxis(mouseY, Vector3.forward);
+        Quaternion yRotation = Quaternion.AngleAxis(mouseX, Vector3.right); // : Vector3.up
         Quaternion targetRotation = xRotation * yRotation;
         transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, lerpTime * Time.deltaTime);
     }
