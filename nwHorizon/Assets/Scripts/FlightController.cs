@@ -32,7 +32,8 @@ public class FlightController : MonoBehaviour
         CanvasController.OnPromptInputOpen += OnPromptInputOpenHandler;
         CanvasController.OnPromptInputClosed += OnPromptInputClosedHandler;
         //CanvasController.OnPromptInputSubmit += OnPromptInputSubmitHandler;
-        PostProcessingHandler.OnTransitionFinished += OnTransitionFinishedHandler;
+        //PostProcessingHandler.OnTransitionFinished += OnTransitionFinishedHandler;
+        ChatGPTHandler.OnRequestComplete += OnTransitionFinishedHandler;
     }
 
     void Update() {
@@ -93,7 +94,7 @@ public class FlightController : MonoBehaviour
     //     //
     // }
 
-    private void OnTransitionFinishedHandler() {
+    private void OnTransitionFinishedHandler(Location location) {
         Debug.Log("transition finished called");
         currentforwardForceMultiplier = normalForwardForceMultiplier;
         lockPlayer = false;
