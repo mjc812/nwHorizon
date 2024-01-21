@@ -1004,6 +1004,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1494247585}
   - component: {fileID: 1494247586}
+  - component: {fileID: 1494247587}
   m_Layer: 0
   m_Name: Post Processing
   m_TagString: Untagged
@@ -1043,6 +1044,21 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!114 &1494247587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494247584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00594a4ae13d14230a3de2563a98ff36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  postProcessVolume: {fileID: 1494247586}
+  increaseSpeed: 3
+  decreaseSpeed: 3
 --- !u!1 &1696129929
 GameObject:
   m_ObjectHideFlags: 0
