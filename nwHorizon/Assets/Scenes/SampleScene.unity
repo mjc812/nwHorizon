@@ -867,13 +867,14 @@ MonoBehaviour:
   Player: {fileID: 1696129929}
   playerTransform: {fileID: 1696129930}
   playerHandler: {fileID: 1696129934}
+  postProcessingHandler: {fileID: 1494247587}
   chatGPTHandler: {fileID: 996719719}
   cesiumHandler: {fileID: 996719718}
   cesium3DTileset: {fileID: 2028387639}
   locationTextHandler: {fileID: 27456526}
-  playerAltitudeOffset: 200
+  playerAltitudeOffset: 150
   playerLatitudeOffset: -600
-  locationTextAltitudeOffset: 300
+  locationTextAltitudeOffset: 250
 --- !u!1 &1400260924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,6 +1005,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1494247585}
   - component: {fileID: 1494247586}
+  - component: {fileID: 1494247587}
   m_Layer: 0
   m_Name: Post Processing
   m_TagString: Untagged
@@ -1043,6 +1045,19 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!114 &1494247587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494247584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00594a4ae13d14230a3de2563a98ff36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  postProcessVolume: {fileID: 1494247586}
 --- !u!1 &1696129929
 GameObject:
   m_ObjectHideFlags: 0
