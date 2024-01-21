@@ -14,7 +14,7 @@ public class Logger : MonoBehaviour
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.T)) {
-            Debug.Log(settingsController.volume);
+            Debug.Log(GameInputManager.Instance.volume);
         }
     }
 

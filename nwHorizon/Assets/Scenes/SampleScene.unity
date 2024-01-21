@@ -6904,8 +6904,9 @@ GameObject:
   - component: {fileID: 996719718}
   - component: {fileID: 996719720}
   - component: {fileID: 996719719}
+  - component: {fileID: 996719721}
   m_Layer: 0
-  m_Name: API Handler
+  m_Name: Game Handler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6988,6 +6989,22 @@ MonoBehaviour:
   playerAltitudeOffset: 200
   playerLatitudeOffset: -800
   locationTextAltitudeOffset: 300
+--- !u!114 &996719721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996719715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a038014b4f444fc94f0ff65d89e993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 0
+  brightness: 0
+  yawSensitivity: 0
+  pitchSensitivity: 0
 --- !u!1 &1017128255
 GameObject:
   m_ObjectHideFlags: 0

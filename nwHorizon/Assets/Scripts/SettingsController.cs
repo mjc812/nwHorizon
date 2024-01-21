@@ -22,11 +22,6 @@ public class SettingsController : MonoBehaviour
 
     void Start()
     {
-        volumeSlider.value = volume;
-        brightnessSlider.value = brightness;
-        yawSensitivitySlider.value = yawSensitivity;
-        pitchSensitivitySlider.value = pitchSensitivity;
-
         // Initialize the slider values and text
         UpdateSliderText(volumeText, volumeSlider.value);
         UpdateSliderText(brightnessText, brightnessSlider.value);
@@ -38,6 +33,13 @@ public class SettingsController : MonoBehaviour
         brightnessSlider.onValueChanged.AddListener(delegate { UpdateSliderText(brightnessText, brightnessSlider.value); });
         yawSensitivitySlider.onValueChanged.AddListener(delegate { UpdateSliderText(yawSensitivityText, yawSensitivitySlider.value); });
         pitchSensitivitySlider.onValueChanged.AddListener(delegate { UpdateSliderText(pitchSensitivityText, pitchSensitivitySlider.value); });
+    }
+
+    void Update() {
+        GameInputManager.Instance.volume = volumeSlider.value;
+        GameInputManager.Instance.brightness = brightnessSlider.value;
+        GameInputManager.Instance.yawSensitivity = yawSensitivitySlider.value;
+        GameInputManager.Instance.pitchSensitivity = pitchSensitivitySlider.value;
     }
 
     // Method to update the text of a slider
