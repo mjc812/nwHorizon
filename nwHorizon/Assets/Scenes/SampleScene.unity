@@ -558,7 +558,7 @@ GameObject:
   - component: {fileID: 198701219}
   - component: {fileID: 198701218}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Yaw Sensitivity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -875,7 +875,7 @@ GameObject:
   - component: {fileID: 444248186}
   - component: {fileID: 444248185}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Brightness
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6362,9 +6362,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1812094449}
+  - {fileID: 905924352}
   - {fileID: 1223192577}
   - {fileID: 1891611760}
-  - {fileID: 905924352}
   m_Father: {fileID: 1982743201}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6406,7 +6406,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -200}
+  m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &913367501
@@ -7083,7 +7083,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchoredPosition: {x: 0, y: -250}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1257354265
@@ -7098,7 +7098,7 @@ GameObject:
   - component: {fileID: 1257354268}
   - component: {fileID: 1257354267}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Pitch Sensitivity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8470,7 +8470,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -150}
+  m_AnchoredPosition: {x: 0, y: -200}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1909521520
@@ -8736,6 +8736,7 @@ GameObject:
   - component: {fileID: 1982743203}
   - component: {fileID: 1982743202}
   - component: {fileID: 1982743205}
+  - component: {fileID: 1982743206}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -8846,6 +8847,26 @@ MonoBehaviour:
   factText: {fileID: 1451879669}
   hint: {fileID: 1034920823}
   settings: {fileID: 880281629}
+--- !u!114 &1982743206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982743200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919cddb6fe8974803919b6e5a75cf664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeText: {fileID: 2022317041}
+  volumeSlider: {fileID: 1331033209}
+  brightnessText: {fileID: 444248185}
+  brightnessSlider: {fileID: 855206941}
+  yawSensitivityText: {fileID: 198701218}
+  yawSensitivitySlider: {fileID: 2018565232}
+  pitchSensitivityText: {fileID: 1257354267}
+  pitchSensitivitySlider: {fileID: 2107525943}
 --- !u!1 &2014070597
 GameObject:
   m_ObjectHideFlags: 0
@@ -9023,7 +9044,7 @@ GameObject:
   - component: {fileID: 2022317042}
   - component: {fileID: 2022317041}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
