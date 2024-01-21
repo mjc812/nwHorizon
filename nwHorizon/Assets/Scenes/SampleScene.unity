@@ -10957,6 +10957,7 @@ GameObject:
   - component: {fileID: 1760199115}
   - component: {fileID: 1760199114}
   - component: {fileID: 1760199117}
+  - component: {fileID: 1760199118}
   m_Layer: 0
   m_Name: Plane PlaceHolder
   m_TagString: Untagged
@@ -11069,6 +11070,18 @@ MonoBehaviour:
   slowFlyMultiplier: 0.2
   smoothing: 2
   momentum: 0.95
+--- !u!114 &1760199118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760199111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 592ab6a82d40d40cc9067f78794ef82d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1769182096
 GameObject:
   m_ObjectHideFlags: 0
