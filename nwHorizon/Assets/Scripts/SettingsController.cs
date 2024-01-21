@@ -22,6 +22,8 @@ public class SettingsController : MonoBehaviour
    // public float pitchSensitivity = 8.0f;
     public TMP_Text pitchSensitivityText;
     public Slider pitchSensitivitySlider;
+    public Toggle disableMotionEffects;
+
 
     void Start()
     {
@@ -31,6 +33,7 @@ public class SettingsController : MonoBehaviour
         UpdateSliderText(contrastText, GameInputManager.Instance.contrast);
         UpdateSliderText(yawSensitivityText, GameInputManager.Instance.yawSensitivity);
         UpdateSliderText(pitchSensitivityText, GameInputManager.Instance.pitchSensitivity);
+        disableMotionEffects.isOn = GameInputManager.Instance.disableMotionEffects;
 
         volumeSlider.value = GameInputManager.Instance.volume;
         contrastSlider.value = GameInputManager.Instance.contrast;
@@ -44,6 +47,7 @@ public class SettingsController : MonoBehaviour
         contrastSlider.onValueChanged.AddListener(delegate { UpdateSliderText(contrastText, contrastSlider.value); });
         yawSensitivitySlider.onValueChanged.AddListener(delegate { UpdateSliderText(yawSensitivityText, yawSensitivitySlider.value); });
         pitchSensitivitySlider.onValueChanged.AddListener(delegate { UpdateSliderText(pitchSensitivityText, pitchSensitivitySlider.value); });
+        disableMotionEffects.onValueChanged.AddListener(delegate { ToggleMotionSickness(disableMotionEffects.isOn); });
     }
 
     void Update() {
@@ -52,6 +56,7 @@ public class SettingsController : MonoBehaviour
         GameInputManager.Instance.contrast = contrastSlider.value;
         GameInputManager.Instance.yawSensitivity = yawSensitivitySlider.value;
         GameInputManager.Instance.pitchSensitivity = pitchSensitivitySlider.value;
+        GameInputManager.Instance.disableMotionEffects = disableMotionEffects.isOn;
     }
 
     // Method to update the text of a slider
@@ -62,6 +67,12 @@ public class SettingsController : MonoBehaviour
             // Update the text with the slider value
             textObject.text = $"{textObject.name}: {sliderValue}";
         }
+    }
+
+    void ToggleMotionSickness(bool isOn)
+    {
+        GameInputManager.Instance.disableMotionEffects = isOn;
+
     }
 }
 
