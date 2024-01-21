@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44862306, g: 0.4986753, b: 0.5756698, a: 1}
+  m_IndirectSpecularColor: {r: 0.44693637, g: 0.49682385, b: 0.5750243, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5413,13 +5413,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.35596627, y: -0.62449527, z: 0.16958268, w: -0.6741924}
+  m_LocalRotation: {x: 0.49426404, y: 0.07799422, z: 0.30355373, w: 0.8108484}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 136.228, y: -447.348, z: -162.6}
+  m_LocalEulerAnglesHint: {x: 141.087, y: -433.785, z: -138.245}
 --- !u!1 &939340545
 GameObject:
   m_ObjectHideFlags: 0
@@ -6717,7 +6717,7 @@ MonoBehaviour:
   _enforceCulledScreenSpaceError: 1
   _culledScreenSpaceError: 64
   _opaqueMaterial: {fileID: 0}
-  _generateSmoothNormals: 0
+  _generateSmoothNormals: 1
   _pointCloudShading:
     _attenuation: 0
     _geometricErrorScale: 1
