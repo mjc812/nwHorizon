@@ -206,7 +206,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1494247585}
+  m_Father: {fileID: 1696129930}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!199 &620947012
 ParticleSystemRenderer:
@@ -5872,8 +5872,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 620947011}
+  m_Children: []
   m_Father: {fileID: 1696129930}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1494247586
@@ -5942,6 +5941,7 @@ Transform:
   - {fileID: 1982743201}
   - {fileID: 1875102777}
   - {fileID: 1760199112}
+  - {fileID: 620947011}
   - {fileID: 1494247585}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6133,7 +6133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8f74cc1a95249e6ba1fd3c978a0734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inverse: 0
+  inverse: 1
   lerpTime: 10
   yawSensitivity: 15
   pitchSensitivity: 7

@@ -7,7 +7,7 @@ public class ParticleSystemHandler : MonoBehaviour
     public float normalSpeed = 100.0f;
     public float slowSpeed = 20.0f;
     public float fastSpeed = 200.0f;
-    public float smoothness = 5.0f;
+    public float smoothness = 0.1f;
 
     private ParticleSystem particleSystem;
     private ParticleSystem.MainModule mainModule;
@@ -24,6 +24,9 @@ public class ParticleSystemHandler : MonoBehaviour
         CanvasController.OnPromptInputOpen += OnPromptInputOpenHandler;
         CanvasController.OnPromptInputClosed += OnPromptInputClosedHandler;
         PostProcessingHandler.OnTransitionFinished += OnTransitionFinishedHandler;
+        FlightController.OnFastFly += OnFastFlyHandler;
+        FlightController.OnSlowFly += OnSlowFlyHandler;
+        FlightController.OnNormalFly += OnNormalFlyHandler;
     }
 
     void Update()
@@ -48,4 +51,15 @@ public class ParticleSystemHandler : MonoBehaviour
         targetValue = normalSpeed;
     }
 
+    private void OnFastFlyHandler() {
+        targetValue = fastSpeed;
+    }
+
+    private void OnSlowFlyHandler() {
+        targetValue = slowSpeed;
+    }
+
+    private void OnNormalFlyHandler() {
+        targetValue = normalSpeed;
+    }
 }
