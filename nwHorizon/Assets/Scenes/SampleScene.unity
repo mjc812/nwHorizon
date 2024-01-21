@@ -5998,7 +5998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalForwardForceMultiplier: 70
   slowForwardForceMultiplier: 10
-  fastForwardForceMultiplier: 200
+  fastForwardForceMultiplier: 400
   torqueForce: 10
   maxPitchAngle: 80
   angularDamping: 0.95

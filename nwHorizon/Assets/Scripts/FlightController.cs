@@ -30,6 +30,17 @@ public class FlightController : MonoBehaviour
 
     void Update() {
         if (!lockPlayer) {
+            bool leftShift = Input.GetKey(KeyCode.LeftShift);
+            bool space = Input.GetKey(KeyCode.Space);
+
+            if (leftShift) {
+                currentforwardForceMultiplier = fastForwardForceMultiplier;
+            } else if (space) {
+                currentforwardForceMultiplier = slowForwardForceMultiplier;
+            } else {
+                currentforwardForceMultiplier = normalForwardForceMultiplier;
+            }
+
             Vector3 rotation = transform.rotation.eulerAngles;
         
             rotation.x = (rotation.x > 180) ? rotation.x - 360 : rotation.x;
@@ -49,6 +60,8 @@ public class FlightController : MonoBehaviour
 
             rb.AddTorque(transform.up * mouseX * torqueForce);
             rb.AddTorque(transform.right * -mouseY * torqueForce);
+
+            Debug.Log(currentforwardForceMultiplier);
 
             Vector3 forwardForce = transform.forward * currentforwardForceMultiplier;
             rb.AddForce(forwardForce);
