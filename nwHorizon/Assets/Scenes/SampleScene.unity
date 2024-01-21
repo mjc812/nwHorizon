@@ -581,8 +581,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3841aef285e88481695496bc0a638b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 1696129929}
+  playerTransform: {fileID: 1696129930}
   chatGPTHandler: {fileID: 996719719}
   cesiumHandler: {fileID: 996719718}
+  cesium3DTileset: {fileID: 2028387639}
+  playerAltitudeOffset: 200
 --- !u!1 &1400260924
 GameObject:
   m_ObjectHideFlags: 0
