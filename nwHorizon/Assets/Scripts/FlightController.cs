@@ -18,7 +18,9 @@ public class FlightController : MonoBehaviour
     }
 
     void Update() {
-        
+        Vector3 rotation = transform.rotation.eulerAngles;
+        rotation.z = 0;
+        transform.rotation = Quaternion.Euler(rotation);
     }
 
     void FixedUpdate()
