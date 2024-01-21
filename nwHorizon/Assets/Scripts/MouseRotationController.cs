@@ -31,6 +31,10 @@ public class MouseRotationController : MonoBehaviour
 
     void Update()
     {
+        if (GameInputManager.Instance.disableMotionEffects) {
+            return;
+        }
+
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
         
