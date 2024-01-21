@@ -61,8 +61,6 @@ public class FlightController : MonoBehaviour
             rb.AddTorque(transform.up * mouseX * torqueForce);
             rb.AddTorque(transform.right * -mouseY * torqueForce);
 
-            Debug.Log(currentforwardForceMultiplier);
-
             Vector3 forwardForce = transform.forward * currentforwardForceMultiplier;
             rb.AddForce(forwardForce);
 

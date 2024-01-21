@@ -49,6 +49,9 @@ public class MouseRotationController : MonoBehaviour
             mouseY *= -1;
         }
 
+        mouseX = Mathf.Clamp(mouseX, -70f, 70f);
+        mouseY = Mathf.Clamp(mouseY, -30f, 30f);
+
         Quaternion xRotation = Quaternion.AngleAxis(mouseY, Vector3.right);
         Quaternion yRotation = Quaternion.AngleAxis(mouseX, inverse ? Vector3.forward : Vector3.up);
         Quaternion targetRotation = xRotation * yRotation;
