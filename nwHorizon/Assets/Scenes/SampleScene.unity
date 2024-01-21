@@ -6770,8 +6770,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292277503
-  m_fontColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+    rgba: 4287818237
+  m_fontColor: {r: 0.99215686, g: 0.9137255, b: 0.57254905, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -10794,7 +10794,7 @@ MonoBehaviour:
   normalForwardForceMultiplier: 150
   slowForwardForceMultiplier: 10
   fastForwardForceMultiplier: 500
-  torqueForce: 30
+  torqueForce: 27
   maxPitchAngle: 80
   angularDamping: 0.95
 --- !u!114 &1696129934
