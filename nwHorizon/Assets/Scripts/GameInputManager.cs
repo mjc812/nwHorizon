@@ -13,6 +13,8 @@ public class GameInputManager : MonoBehaviour
     public float defaultYawSensitivity = 15f;
     public float pitchSensitivity;
     public float defaultPitchSensitivity = 8f;
+    public float contrast;
+    public float defaultContrast = 5f;
 
     void Awake()
     {
@@ -20,6 +22,7 @@ public class GameInputManager : MonoBehaviour
         brightness = defaultBrightness;
         yawSensitivity = defaultYawSensitivity;
         pitchSensitivity = defaultPitchSensitivity;
+        contrast = defaultContrast;
 
         if (Instance == null)
         {

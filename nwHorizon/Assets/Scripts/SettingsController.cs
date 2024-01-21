@@ -11,6 +11,9 @@ public class SettingsController : MonoBehaviour
     //public float brightness = 75.0f;
     public TMP_Text brightnessText;
     public Slider brightnessSlider;
+//public float brightness = 75.0f;
+    public TMP_Text contrastText;
+    public Slider contrastSlider;
 
    // public float yawSensitivity = 15.0f;
     public TMP_Text yawSensitivityText;
@@ -25,10 +28,12 @@ public class SettingsController : MonoBehaviour
         // Initialize the slider values and text
         UpdateSliderText(volumeText, GameInputManager.Instance.volume);
         UpdateSliderText(brightnessText, GameInputManager.Instance.brightness);
+        UpdateSliderText(contrastText, GameInputManager.Instance.contrast);
         UpdateSliderText(yawSensitivityText, GameInputManager.Instance.yawSensitivity);
         UpdateSliderText(pitchSensitivityText, GameInputManager.Instance.pitchSensitivity);
 
         volumeSlider.value = GameInputManager.Instance.volume;
+        contrastSlider.value = GameInputManager.Instance.contrast;
         brightnessSlider.value = GameInputManager.Instance.brightness;
         yawSensitivitySlider.value = GameInputManager.Instance.yawSensitivity;
         pitchSensitivitySlider.value = GameInputManager.Instance.pitchSensitivity;
@@ -36,6 +41,7 @@ public class SettingsController : MonoBehaviour
         // Add listeners to respond to slider value changes
         volumeSlider.onValueChanged.AddListener(delegate { UpdateSliderText(volumeText, volumeSlider.value); });
         brightnessSlider.onValueChanged.AddListener(delegate { UpdateSliderText(brightnessText, brightnessSlider.value); });
+        contrastSlider.onValueChanged.AddListener(delegate { UpdateSliderText(contrastText, contrastSlider.value); });
         yawSensitivitySlider.onValueChanged.AddListener(delegate { UpdateSliderText(yawSensitivityText, yawSensitivitySlider.value); });
         pitchSensitivitySlider.onValueChanged.AddListener(delegate { UpdateSliderText(pitchSensitivityText, pitchSensitivitySlider.value); });
     }
@@ -43,6 +49,7 @@ public class SettingsController : MonoBehaviour
     void Update() {
         GameInputManager.Instance.volume = volumeSlider.value;
         GameInputManager.Instance.brightness = brightnessSlider.value;
+        GameInputManager.Instance.contrast = contrastSlider.value;
         GameInputManager.Instance.yawSensitivity = yawSensitivitySlider.value;
         GameInputManager.Instance.pitchSensitivity = pitchSensitivitySlider.value;
     }
