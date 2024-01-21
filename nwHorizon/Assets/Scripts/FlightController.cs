@@ -4,6 +4,13 @@ using System.Collections;
 
 public class FlightController : MonoBehaviour
 {
+    public delegate void FastFly();
+    public static event FastFly OnFastFly;
+    public delegate void SlowFly();
+    public static event SlowFly OnSlowFly;
+    public delegate void NormalFly();
+    public static event NormalFly OnNormalFly;
+
     private float currentforwardForceMultiplier = 70.0f;  
     public float normalForwardForceMultiplier = 70.0f;
     public float slowForwardForceMultiplier = 10.0f;
@@ -34,10 +41,13 @@ public class FlightController : MonoBehaviour
             bool space = Input.GetKey(KeyCode.Space);
 
             if (leftShift) {
+                OnFastFly?.Invoke();
                 currentforwardForceMultiplier = fastForwardForceMultiplier;
             } else if (space) {
+                OnSlowFly?.Invoke();
                 currentforwardForceMultiplier = slowForwardForceMultiplier;
             } else {
+                OnNormalFly?.Invoke();
                 currentforwardForceMultiplier = normalForwardForceMultiplier;
             }
 
@@ -60,8 +70,6 @@ public class FlightController : MonoBehaviour
 
             rb.AddTorque(transform.up * mouseX * torqueForce);
             rb.AddTorque(transform.right * -mouseY * torqueForce);
-
-            Debug.Log(currentforwardForceMultiplier);
 
             Vector3 forwardForce = transform.forward * currentforwardForceMultiplier;
             rb.AddForce(forwardForce);

@@ -202,11 +202,11 @@ Transform:
   m_GameObject: {fileID: 620947010}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 54.3}
+  m_LocalPosition: {x: 0, y: 0, z: 65.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1494247585}
+  m_Father: {fileID: 1696129930}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!199 &620947012
 ParticleSystemRenderer:
@@ -257,7 +257,7 @@ ParticleSystemRenderer:
   m_MaxParticleSize: 0.5
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
-  m_LengthScale: 8
+  m_LengthScale: 4
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
@@ -5087,8 +5087,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4290677734
-  m_fontColor: {r: 0.9019608, g: 0.54509807, b: 0.74509805, a: 1}
+    rgba: 4292277503
+  m_fontColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5533,7 +5533,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 100000
-  field of view: 60
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -5872,8 +5872,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 620947011}
+  m_Children: []
   m_Father: {fileID: 1696129930}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1494247586
@@ -5942,6 +5941,7 @@ Transform:
   - {fileID: 1982743201}
   - {fileID: 1875102777}
   - {fileID: 1760199112}
+  - {fileID: 620947011}
   - {fileID: 1494247585}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6136,7 +6136,8 @@ MonoBehaviour:
   inverse: 1
   lerpTime: 10
   yawSensitivity: 15
-  pitchSensitivity: 10
+  pitchSensitivity: 7
+  slowFlyMultiplier: 0.2
   smoothing: 2
   momentum: 0.95
 --- !u!1 &1851694267
@@ -6358,7 +6359,8 @@ MonoBehaviour:
   inverse: 0
   lerpTime: 10
   yawSensitivity: 3
-  pitchSensitivity: 3
+  pitchSensitivity: 2
+  slowFlyMultiplier: 0.2
   smoothing: 2
   momentum: 0.95
 --- !u!1 &1909521520
