@@ -8,6 +8,7 @@ public class PostProcessingHandler : MonoBehaviour
     public static event TransitionFinished OnTransitionFinished;
 
     public PostProcessVolume postProcessVolume;
+    private ColorGrading colorGrading;
     private Bloom bloomLayer;
     private bool intensify = false;
 
@@ -18,6 +19,11 @@ public class PostProcessingHandler : MonoBehaviour
             Debug.LogError("Bloom layer not found!");
             return;
         }
+        postProcessVolume.profile.TryGetSettings(out colorGrading);
+    }
+
+    void Update() {
+        //colorGrading.postExposure.value = GameInputManager.Instance.brightness;
     }
 
     public void IncreaseBloom()
