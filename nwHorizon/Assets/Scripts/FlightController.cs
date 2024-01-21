@@ -61,20 +61,21 @@ public class FlightController : MonoBehaviour
             transform.rotation = Quaternion.Euler(rotation);
         }
     }
-
+    
     void FixedUpdate()
     {
         if (!lockPlayer) {
             float mouseX = Input.GetAxis("Mouse X");
             float mouseY = Input.GetAxis("Mouse Y");
 
-            rb.AddTorque(transform.up * mouseX * torqueForce);
-            rb.AddTorque(transform.right * -mouseY * torqueForce);
-
             Vector3 forwardForce = transform.forward * currentforwardForceMultiplier;
             rb.AddForce(forwardForce);
 
+            rb.AddTorque(transform.up * mouseX * torqueForce);
+            rb.AddTorque(transform.right * -mouseY * torqueForce);
+
             rb.angularVelocity *= angularDamping;
+            rb.velocity *= angularDamping;
         }
     }
 

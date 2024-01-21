@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44693637, g: 0.49682385, b: 0.5750243, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5413,13 +5413,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.49426404, y: 0.07799422, z: 0.30355373, w: 0.8108484}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 141.087, y: -433.785, z: -138.245}
 --- !u!1 &939340545
 GameObject:
   m_ObjectHideFlags: 0
@@ -5450,12 +5450,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _originAuthority: 0
-  _latitude: 39.736401
-  _longitude: -105.25737
-  _height: 2250
-  _ecefX: -1292934.4950404565
-  _ecefY: -4740026.104285267
-  _ecefZ: 4056960.1513377777
+  _latitude: 48.8566
+  _longitude: 2.3522
+  _height: 150
+  _ecefX: 4201013.404372275
+  _ecefY: 172563.82683303644
+  _ecefZ: 4780194.301752191
   _scale: 1
 --- !u!4 &939340547
 Transform:
@@ -5485,6 +5485,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5626,6 +5627,22 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c45a4fe2e25d4227a0a95acd0dc1508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 963194227}
+  normalFOV: 80
+  boostedFOV: 100
+  transitionSpeed: 1.5
 --- !u!1 &996719715
 GameObject:
   m_ObjectHideFlags: 0
@@ -5719,9 +5736,9 @@ MonoBehaviour:
   cesiumHandler: {fileID: 996719718}
   cesium3DTileset: {fileID: 2028387639}
   locationTextHandler: {fileID: 27456526}
-  playerAltitudeOffset: 150
-  playerLatitudeOffset: -600
-  locationTextAltitudeOffset: 250
+  playerAltitudeOffset: 200
+  playerLatitudeOffset: -800
+  locationTextAltitudeOffset: 300
 --- !u!1 &1400260924
 GameObject:
   m_ObjectHideFlags: 0
@@ -5853,6 +5870,7 @@ GameObject:
   - component: {fileID: 1494247585}
   - component: {fileID: 1494247586}
   - component: {fileID: 1494247587}
+  - component: {fileID: 1494247588}
   m_Layer: 0
   m_Name: Post Processing
   m_TagString: Untagged
@@ -5905,6 +5923,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   postProcessVolume: {fileID: 1494247586}
+--- !u!114 &1494247588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494247584}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78489081c809e4ec9a6fb103a7f7089f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  postProcessVolume: {fileID: 1494247586}
+  normalIntensity: 0
+  boostedIntensity: 1
+  transitionSpeed: 0.1
 --- !u!1 &1696129929
 GameObject:
   m_ObjectHideFlags: 0
@@ -5996,9 +6030,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93d4a925ba364a48aaa26874ac754ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalForwardForceMultiplier: 70
+  normalForwardForceMultiplier: 100
   slowForwardForceMultiplier: 10
-  fastForwardForceMultiplier: 400
+  fastForwardForceMultiplier: 500
   torqueForce: 10
   maxPitchAngle: 80
   angularDamping: 0.95
@@ -6135,7 +6169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inverse: 1
   lerpTime: 10
-  yawSensitivity: 15
+  yawSensitivity: 12
   pitchSensitivity: 7
   slowFlyMultiplier: 0.2
   smoothing: 2
@@ -6699,7 +6733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 844ac86b07dcfa3468f56da55d787510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _showCreditsOnScreen: 1
+  _showCreditsOnScreen: 0
   _tilesetSource: 0
   _url: 
   _ionAssetID: 2275207
@@ -6717,7 +6751,7 @@ MonoBehaviour:
   _enforceCulledScreenSpaceError: 1
   _culledScreenSpaceError: 64
   _opaqueMaterial: {fileID: 0}
-  _generateSmoothNormals: 0
+  _generateSmoothNormals: 1
   _pointCloudShading:
     _attenuation: 0
     _geometricErrorScale: 1
