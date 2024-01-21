@@ -8254,8 +8254,8 @@ MonoBehaviour:
   locationTextHandler: {fileID: 27456526}
   canvasController: {fileID: 1982743205}
   playerAltitudeOffset: 200
-  playerLatitudeOffset: -800
-  locationTextAltitudeOffset: 300
+  playerLatitudeOffset: -500
+  locationTextAltitudeOffset: 350
 --- !u!114 &996719721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10791,7 +10791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93d4a925ba364a48aaa26874ac754ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalForwardForceMultiplier: 100
+  normalForwardForceMultiplier: 150
   slowForwardForceMultiplier: 10
   fastForwardForceMultiplier: 500
   torqueForce: 30
