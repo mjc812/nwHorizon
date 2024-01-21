@@ -16,6 +16,10 @@ public class FlightController : MonoBehaviour
         {
             Debug.LogError("Rigidbody component not found. Attach a Rigidbody to the GameObject.");
         }
+        CanvasController.OnPromptInputOpen += OnPromptInputOpenHandler;
+        CanvasController.OnPromptInputClosed += OnPromptInputClosedHandler;
+        CanvasController.OnPromptInputSubmit += OnPromptInputSubmitHandler;
+        PostProcessingHandler.OnTransitionFinished += OnTransitionFinishedHandler;
     }
 
     void Update() {
@@ -48,5 +52,21 @@ public class FlightController : MonoBehaviour
         rb.AddForce(forwardForce);
 
         rb.angularVelocity *= angularDamping;
+    }
+
+    private void OnPromptInputOpenHandler() {
+        Debug.Log("input open");
+    }
+
+    private void OnPromptInputClosedHandler() {
+        Debug.Log("input closed");
+    }
+    
+    private void OnPromptInputSubmitHandler(string prompt) {
+        Debug.Log("input submit: " + prompt);
+    }
+
+    private void OnTransitionFinishedHandler() {
+        Debug.Log("transition ready");
     }
 }
